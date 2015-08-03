@@ -1,0 +1,15 @@
+
+
+
+
+<%= form_for @user, {html: { class: "homeform"}} do |s|  %>
+	<%= s.text_field :fname, {placeholder: 'First Name'} %>
+	<%= s.text_field :lname, {placeholder: 'Last Name'} %>
+	<%= s.text_field :username, {placeholder: 'Username'} %>
+	<%= s.text_field :email, {placeholder: 'Email'} %>
+	<%= s.password_field :password, {placeholder: 'Password'} %>
+	<%= s.password_field :password_confirmation, {placeholder: 'Confirm Password'}%>
+	
+ 
+	<%= s.submit 'Sign Up'  %>
+	<% end %>

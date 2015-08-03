@@ -34,6 +34,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'devise', '~> 3.5.1'
+gem 'omniauth-github'
+gem 'pry-rails'
+gem "github_api"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -45,5 +50,17 @@ group :development, :test do
   gem 'spring'
 
   gem 'paperclip', '2.3.3'
+
+  gem 'rspec-rails', '~> 3.2'
+
+  gem 'database_cleaner'
+
+  gem 'pry-rescue' 
+  gem 'pry-stack_explorer'
+
+
+  gem 'factory_girl_rails'
+
+ 
 end
 
