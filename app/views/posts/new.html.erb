@@ -1,0 +1,12 @@
+<%= error_msg(@post) %>
+
+<div id="fancy_post">
+	
+	<%= form_for @post, {html: { class: "newform"}} do |s|  %>
+		<%= s.text_field :title, {placeholder: 'title'} %>
+		<%= s.text_field :body, {placeholder: 'body'} %>
+		<%= s.text_field :username, {placeholder: 'Username'} %>
+		<%= s.submit 'Click to Post'  %>
+	<% end %>
+
+</div>

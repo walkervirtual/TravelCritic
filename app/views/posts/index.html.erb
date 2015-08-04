@@ -1,0 +1,4 @@
+<% @posts.each do |post| %>
+  <%= "#{post.username}" %>
+  <%= link_to 'Comments',post_comments_path(post) %>
+<% end %>

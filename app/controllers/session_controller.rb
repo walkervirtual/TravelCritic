@@ -1,15 +1,33 @@
 class SessionController < ApplicationController
 	
-	def create
-    user = User.find_by_username(params[:username])
-    if user
-      if user.password == params[:password]
-        session[:user_id] = user.id
-        flash[:welcome] = "Welcome to Nneoma'Wallet"
-        redirect_to users_path
-      end
+
+  def destroy
+    session[:user_id] = nil
+    flash[:alert] = "Successfully Logged Out"
+    redirect_to root_path
+  end
+
+  def create
+    username = params[:username]
+    password = params[:password]
+
+    @user = User.where(username: username).first
+
+    if @user.nil?
+      #wrong username case
+      flash[:alert] = "Incorrect credentials"
+      redirect_to root_path
     else
-      flash[:alert] = "Invalid Credentials"
-      redirect_to new_session_path
+      if @user.password == password
+        session[:user_id] = @user.id
+        flash[:alert] = "Welcome!"
+        redirect_to root_path
+      else
+        #wrong password case
+        flash[:alert] = "Incorrect credentials"
+        redirect_to root_path
+      end
     end
+
+  end
 end

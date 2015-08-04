@@ -1,0 +1,12 @@
+<%= error_msg(@comment) %>
+
+<div id="fancy_comment">
+	
+	<%= form_for @comment, {html: { class: "newform"}} do |s|  %>
+		<%= s.text_field :title, {placeholder: 'title'} %>
+		<%= s.text_field :body, {placeholder: 'body'} %>
+		<%= s.text_field :username, {placeholder: 'Username'} %>
+		<%= s.submit 'Click to Comment'  %>
+	<% end %>
+
+</div>

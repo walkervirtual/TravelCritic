@@ -1,0 +1,16 @@
+<nav>
+    <ul>
+     	<!--<li class="navbar" > <%= highlightable_li("Home", root_path) %> </li> #not sure yet wat i do with this-->
+      <li class="navbar" > <%= highlightable_li("Recent Posts", posts_path) %> </li>
+      <li class="navbar" > <%= highlightable_li('My Posts', post_path(@post)) if @post_id %>`
+      </li>
+      <li class="navbar" > <%= highlightable_li("New Post", new_post_path)  %> </li>
+      <li class="navbar" > <%= highlightable_li("Recent Comments", comments_path) %> </li>
+      <li class="navbar" > <%= highlightable_li('My Comments', post_path(@comment)) if @comment_id %>`
+      </li>
+      <li class="navbar" > <%= highlightable_li("New Comment", new_comment_path)  %> </li>
+      <li class="navbar" > <%= highlightable_li("My Profile", user_path(@user)) if @user_id  %> </li>
+      	<li class="navbar" > <%= highlightable_li("Edit Profile", edit_user_path(@user)) if @user_id %> </li>
+        <li class="navbar"><%= link_to "Sign Out", '/logout', method: :delete %></li>
+    </ul>
+</nav>
